@@ -12,6 +12,6 @@ let fruty = ["apple","mango","lime" ];
 fruty.push("limon");
 console.log(fruty);
 
-for (let i = 0; i < 4; i++){
+for (let i = 0; i < fruty.length; i++){
     console.log(fruty[i]);
 }
