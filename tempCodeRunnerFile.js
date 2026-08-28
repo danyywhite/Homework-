@@ -1,9 +1,11 @@
-function checkPassword(password){
-    if (password === "12345"){
-        return "Заходи бро";
-    } else {
-        return "Развернись и зайди нормально";
-    }
-}
-let result = checkPassword("234");
-console.log(result);
+let phone = {
+    brand: "Apple",
+    model: "iPhone 16",
+    price: 1999
+};
+
+phone.price = 1799;
+phone.color = "black";
+phone.storage = "256GB"
+delete phone.brand;
+console.log(phone);
