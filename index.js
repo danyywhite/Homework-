@@ -12,6 +12,8 @@
 - сравнение чисел
 */
 
+const { use } = require("react");
+
 // Создаём функцию checkNumber.
 // number — параметр, который функция получает при вызове.
 function checkNumber(number) {
@@ -40,7 +42,7 @@ function checkNumber(number) {
 
 // Вызываем функцию с числом 0.
 // Результат сохраняем в переменную result.
-let result = checkNumber(0);
+// let result = checkNumber(0);
 
 // Выводим результат в консоль.
 console.log(result);
@@ -1172,9 +1174,106 @@ object[property]
 
 // Есть ли хотя бы один элемент, который подходит под условие?
 
-let users = [
-    { name: "Danil", age: 26 },
-    { name: "Alex", age: 30 },
-    { name: "Bob", age: 22 },
-    { name: "Mike", age: 28 }
-];
+// let usersB = [
+//     { name: "Danil", age: 26 },
+//     { name: "Alex", age: 30 },
+//     { name: "Bob", age: 22 },
+//     { name: "Mike", age: 28 }
+// ];
+
+// //создаю переменную с результамом
+// let result = usersB.some(function(user){
+//             //проверяем на истину возраст пользователей, users.some() начинает проверять пользователей по одному.
+//             // user — это текущий пользователь.
+//         return user.age <= 25; 
+// });
+// // возвращает true
+// console.log(result);
+
+
+// // 🟢 Задание №2
+// let usersC = [
+//     { name: "Danil", age: 26, hasAccount: true },
+//     { name: "Alex", age: 30, hasAccount: false },
+//     { name: "Bob", age: 22, hasAccount: true },
+//     { name: "Mike", age: 28, hasAccount: true }
+// ];
+//     //Создаём result и запускаем some().
+// let result = usersC.some(function(userC){
+//         //Проверяем, есть ли у текущего пользователя аккаунт.
+//         return userC.hasAccount === true;
+// });
+// //После этого some() уже понимает, что ответ true, и возвращает:true.
+// console.log(result);
+// //!ВАЖНО ---some() → хотя бы один подходит?И всегда возвращает  true/false.
+// //* И важный момент: some() не возвращает пользователя, в отличие от find().
+
+// // 🟡 Задание — every()
+// // Нужно проверить:
+// // Все ли пользователи старше 20 лет?
+
+// // дан макссив 
+// let users = [
+//     { name: "Danil", age: 26 },
+//     { name: "Alex", age: 30 },
+//     { name: "Bob", age: 22 },
+//     { name: "Mike", age: 28 }
+// ];
+
+// //Запускаем every() на массиве users.
+// // every() берёт пользователей по одному и проверяет условие.
+// let newArrayC = users.every(function(user){
+//     // проверяем.
+//     return user.age > 20;
+// });
+// //  Все четыре проверки дали true.
+// console.log(newArrayC);
+
+// //! some()  → хотя бы один подходит?
+// //* every() → все подходят?
+// /*
+//     ГЛАВНОЕ РАЗЛИЧИЕ
+// some()  → хотя бы один подходит
+// every() → каждый подходит*/
+
+
+
+
+// ------------------------------------
+// ------------------------------------
+// Теперь закрепим some() + every()
+// Используй тот же массив.
+
+// let users = [
+//     { name: "Danil", age: 26 },
+//     { name: "Alex", age: 30 },
+//     { name: "Bob", age: 22 },
+//     { name: "Mike", age: 28 }
+// ];
+// /*  Создай две переменные:
+
+// hasYoungUser — проверить, есть ли хотя бы один пользователь младше 25.
+// allAdults — проверить, что все пользователи старше 18. */
+// let hasYoungUser = users.some(function(userA){
+//     return userA.age < 25;
+// });
+
+// let allAdults = users.every(function(userB){
+//     return userB.age > 18;
+// });
+
+
+// console.log(hasYoungUser); 
+// console.log(allAdults);
+
+
+//!--------------------------------------
+/* ИТОГ
+блок методов массивов
+Метод	Что делает
+forEach()	перебирает элементы
+map()	создаёт новый массив
+filter()	выбирает несколько элементов
+find()	находит первый подходящий
+some()	проверяет, есть ли хотя бы один
+every()	проверяет, подходят ли все */
