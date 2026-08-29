@@ -1,442 +1,1095 @@
+
 /*
+===========================================================
+1. ФУНКЦИИ + УСЛОВИЯ
+===========================================================
 
+Тема:
+- function
+- параметры
+- if / else if / else
+- return
+- сравнение чисел
+*/
 
+// Создаём функцию checkNumber.
+// number — параметр, который функция получает при вызове.
+function checkNumber(number) {
 
-"Ноль" — если равно 0
+    // Проверяем, больше ли число нуля.
+    if (number > 0) {
 
-Проверь её минимум с 3 разными числами. */
+        // Если условие true, возвращаем строку "Положительное".
+        return "Положительное";
 
+    // Если первое условие false, проверяем, равно ли число нулю.
+    } else if (number === 0) {
 
-// function checkNumber(number){
-//     if(number > 0){
-//         return "Положительное";
-//     } else if(number === 0){
-//         return "Ноль";
-//     } else { 
-//         return "Отрицательное";
-//     } 
-// }
-//     let result = checkNumber(0);
-//     console.log(result);
+        // Если число равно 0, возвращаем "Ноль".
+        return "Ноль";
 
+    // Если оба предыдущих условия false,
+    // значит число меньше нуля.
+    } else {
 
-/*🟡 Задание 2 — информация о пользователе
+        // Возвращаем "Отрицательное".
+        return "Отрицательное";
+    }
+}
 
-Создай функцию:
 
-checkUser(name, age, hasAccount)
+// Вызываем функцию с числом 0.
+// Результат сохраняем в переменную result.
+let result = checkNumber(0);
 
-Она должна:
-
-Получить имя, возраст и наличие аккаунта.
-Если возраст 18+ И аккаунт есть → вернуть:
-"Alex, доступ разрешен"
-Иначе → вернуть:
-"Alex, доступ запрещен"
-
-Используй &&. */
-
-// function checkUser(userName, age, hasAccount) {
-//     console.log("Как тебя зовут?" + userName, "Сколько тебе лет?" + age, "у тебя есть аккаунт?" + hasAccount);
-//     if (age >= 18 && hasAccount === true){
-//         return userName + ", доступ разрешен";
-//     }else {
-//         return userName + ", доступ запрещен";
-//     }
-// }
-// let userName = "Danil";
-// let age = 25;
-// let hasAccount = true;
-// let result = checkUser(userName, age, hasAccount);
-// console.log(result);
-
-// let fruits = ["apple", "banana", "orange"];
-
-// function showFruits() {
-//     for (let i = 0; i < fruits.length; i++) {
-//         console.log(fruits[i]);
-//     }
-// }
-// showFruits();
-// fruits.push("kiwi");
-// showFruits();
-
-/*🔴 Бонус, если будет время
-
-Создай функцию:
-
-sum(a, b)
-
-которая возвращает сумму.
-
-А затем функцию:
-
-multiply(a, b)
-
-которая возвращает произведение.
-
-После этого попробуй сделать:
-
-результат суммы × результат умножения
-
-Например, если sum(2, 3) и multiply(4, 5), ты должен получить результат уже самостоятельно, используя переменные. */
-
-// function sum(a,b) {
-//     return a + b;
-// }
-// function multiply(a,b) {
-//     return a * b;
-// }
-
-// let result = sum(2,3) * multiply(4,5);
-// console.log(result);
-
-// let car = {
-//     brand: "BMW",
-//     model: "M5",
-//     year: 2024
-// };
-
-// car.model = "M3";
-// car.price = 50000;
-// console.log(car);
-
-
-/* Попробуй:
-
-вывести имя;
-изменить возраст на 26;
-добавить новое свойство job со значением "developer". */
-
-// let user = {
-//     name: "Danil",
-//     age: 25,
-//     city: "Dallas"
-// };
-
-// console.log(user.name);
-// user.age = 26;
-// user.devVops = "developer";
-// console.log(user);
-
-
-// let users = [
-//     { name: "Danil", age: 26 },
-//     { name: "Alex", age: 30 },
-//     { name: "Bob", age: 22 }
-// ];
-// console.log(users[0].name);
-
-// let users = [
-//     { name: "Danil", age: 26 },
-//     { name: "Alex", age: 30 },
-//     { name: "Bob", age: 22 }
-// ];
-
-// for (let i = 0; i < users.length; i++){
-//     console.log(users[i].name);
-// }
-
-
-// let users = [
-//     { name: "Danil", age: 26 },
-//     { name: "Alex", age: 30 },
-//     { name: "Bob", age: 22 }
-// ];
-// for (let i = 0; i < users.length; i++){
-//     if(users[i].age>= 25) {
-//         console.log(users[i].name);
-//     }
-// }
-
-
-// let phone = {
-//     brand: "Apple",
-//     model: "iPhone 15",
-//     price: 999
-// };
-
-// phone.model = "Iphone 16"
-// phone.price = 1999
-// console.log(phone.model,phone.price)
-
-// let phone = {
-//     brand: "Apple",
-//     model: "iPhone 15",
-//     price: 999
-// };
-
-// phone.color = "black";
-// phone.storage = "256gb";
-// console.log(phone);
-
-// let user = {
-//     name: "Danil",
-//     age: 26,
-//     city: "Tampa",
-//     job: "developer"
-// };
-
-// delete user.city;
-// console.log(user);
-
-// let user = {
-//     name: "Danil",
-//     age: 26,
-//     city: "Tampa"
-// };
-
-// let property = "age";
-
-// console.log(user[property])
-
-// let user = {
-//     name: "Danil",
-//     age: 26
-// };
-// function showUser(user) {
-//     console.log(user.age)
-//     console.log(user.name) 
-// }
-// showUser(user);
-
-// let user = {
-//     name: "Danil",
-//     age: 26
-// };
-
-// function increaseAge(user) {
-//     user.age++;
-// }
-// function addJob(user) {
-//     user.job = "developer";
-// }
-
-// increaseAge(user);
-// addJob(user);
-
-
-// console.log(user);
-
-
-// let user = {
-//     name: "Danil",
-//     age: 26,
-
-//     sayHello: function() {
-//         console.log("Привет!");
-//     }
-// };
-
-// user.sayHello();
-
-// let car = {
-//     brand: "BMW",
-//     model: "M5",
-
-//     showCar: function() {
-//         console.log(this.brand + this.model); // здесь твой код console.log(`${this.brand} ${this.model}`); улучшить код
-//     }
-// };
-// car.showCar();
-
-// let car = {
-//     brand: "BMW",
-//     model: "M5",
-
-//     changeModel: function() {
-//         this.model = "M3";  // твой код
-//     }
-// };
-
-// car.changeModel();
-
-// console.log(car.model);
-
-// let user = {
-//     name: "Danil",
-//     age: 26,
-
-//     birthday: function() {
-//         this.age++;
-//     }
-// };
-// user.birthday(user);
-// console.log(user);
-
-// let user = {
-//     name: "Danil",
-//     age: 26,
-
-//     birthday: function() {
-//         this.age++;
-//     }
-// };
-
-// console.log(user)
-
-// let phone = {
-//     brand: "Apple",
-//     model: "iPhone 16",
-//     price: 1999,
-
-//     showInfo: function() {
-//         console.log(this.brand + " " + this.model + " - " + "$" + this.price);//   либо console.log(`${this.brand} ${this.model} - $${this.price}`);
-//     }
-// };
-// phone.showInfo();
-
-// let fruits = ["apple", "banana", "orange", "kiwi"];
-//     fruits.forEach(function(fruit){
-//         console.log(fruit);
-//     })
-
-// let users = [
-//     { name: "Danil", age: 26 },
-//     { name: "Alex", age: 30 },
-//     { name: "Bob", age: 22 }
-// ];
-// users.forEach(function(user){
-//     console.log(user.name)
-// })
-
-// let numbers = [1, 2, 3, 4, 5];
-
-// let doubledNumbers = numbers.map(function(arrayNum){
-//     return arrayNum * 2
-// })  
-
-// console.log(doubledNumbers);
-
-
-// let users = [
-//     { name: "Danil", age: 26 },
-//     { name: "Alex", age: 30 },
-//     { name: "Bob", age: 22 }
-// ];
-
-// let names = users.map(function(nameUs){
-//     return nameUs.name;
-// });
-
-// console.log(names);
-
-
-// let users = [
-//     { name: "Danil", age: 26 },
-//     { name: "Alex", age: 30 },
-//     { name: "Bob", age: 22 }
-// ];
-
-// let  adults = users.filter(function(user){
-//     return user.age >= 25;
-// });
-
-// console.log(adults);
-
-
-
-// let users = [
-//     { name: "Danil", age: 26, hasAccount: true },
-//     { name: "Alex", age: 30, hasAccount: false },
-//     { name: "Bob", age: 22, hasAccount: true },
-//     { name: "Mike", age: 28, hasAccount: true }
-// ];
-
-// let allowedUsers = users.filter(function(user){
-//     return user.age >= 25 && user.hasAccount === true;
-// });
-
-// console.log(allowedUsers);
-
-// let users = [
-//     { name: "Danil", age: 26, hasAccount: true, city: "Tampa" },
-//     { name: "Alex", age: 30, hasAccount: false, city: "Miami" },
-//     { name: "Bob", age: 22, hasAccount: true, city: "Tampa" },
-//     { name: "Mike", age: 28, hasAccount: true, city: "Miami" },
-//     { name: "John", age: 35, hasAccount: true, city: "Tampa" }
-// ];
-
-// let allowedUsers = users.filter(function(user){
-//         return user.age >= 25 && user.hasAccount === true && user.city === "Tampa"
-// });
-
-// console.log (allowedUsers);
-
-
+// Выводим результат в консоль.
+console.log(result);
 
 
 /*
-получить: 
-["Danil", "Mike"]
+===========================================================
+2. ФУНКЦИЯ + НЕСКОЛЬКО УСЛОВИЙ
+===========================================================
 
-возраст >= 25
-есть аккаунт
-в результате нужны только имена*/
+Тема:
+- несколько параметров
+- && (И)
+- boolean
+- return
+*/
 
-// let users = [
-//     { name: "Danil", age: 26, hasAccount: true },
-//     { name: "Alex", age: 30, hasAccount: false },
-//     { name: "Bob", age: 22, hasAccount: true },
-//     { name: "Mike", age: 28, hasAccount: true }
-// ];
+// Создаём функцию checkUser.
+// Она получает имя, возраст и наличие аккаунта.
+function checkUser(userName, age, hasAccount) {
 
-// let allowedUs = users.filter(function(user){
-//         return user.age >= 25 && user.hasAccount === true 
-            
-// });
+    // Проверяем одновременно два условия:
+    // возраст должен быть 18 или больше
+    // И аккаунт должен существовать.
+    if (age >= 18 && hasAccount === true) {
 
-// let aboutPl = allowedUs.map(function(abo){
-//     return abo.name
-// })
-// console.log(aboutPl);
+        // Если оба условия true,
+        // возвращаем сообщение о разрешённом доступе.
+        return userName + ", доступ разрешен";
 
+    } else {
 
-// let users = [
-//     { name: "Danil", age: 26, hasAccount: true },
-//     { name: "Alex", age: 30, hasAccount: false },
-//     { name: "Bob", age: 22, hasAccount: true },
-//     { name: "Mike", age: 28, hasAccount: true }
-// ];
-
-// let names = users
-//     .filter(function(user){
-//         return user.age >= 25 && user.hasAccount === true;
-//     })
-//     .map(function(user) {
-//         return user.name
-//     });
-
-//     console.log(names);
+        // Если хотя бы одно условие false,
+        // возвращаем сообщение о запрещённом доступе.
+        return userName + ", доступ запрещен";
+    }
+}
 
 
-// let users = [
-//     { name: "Danil", age: 26 },
-//     { name: "Alex", age: 30 },
-//     { name: "Bob", age: 22 },
-//     { name: "Mike", age: 28 }
-// ];
+// Создаём переменную с именем пользователя.
+let userName = "Danil";
 
-// let user = users.find(function(userm){
-//     return userm.age === 28;
-// });
+// Создаём переменную с возрастом.
+let age = 25;
 
-// console.log(user)
+// Создаём boolean-переменную.
+// true означает, что аккаунт есть.
+let hasAccount = true;
 
+// Вызываем функцию и передаём ей три аргумента.
+let resultUser = checkUser(userName, age, hasAccount);
 
-
-
-
+// Выводим результат функции.
+console.log(resultUser);
 
 
+/*
+===========================================================
+3. МАССИВЫ
+===========================================================
+
+Тема:
+- массив
+- индексы
+- length
+- push()
+- shift()
+*/
+
+// Создаём массив фруктов.
+let fruits = ["apple", "banana", "orange"];
+
+// Создаём функцию для вывода всех фруктов.
+function showFruits() {
+
+    // Цикл начинается с индекса 0.
+    // i < fruits.length означает:
+    // повторять цикл, пока i меньше количества элементов.
+    for (let i = 0; i < fruits.length; i++) {
+
+        // fruits[i] получает текущий элемент массива.
+        console.log(fruits[i]);
+    }
+}
+
+// Вызываем функцию и выводим первоначальный массив.
+showFruits();
+
+// push() добавляет новый элемент В КОНЕЦ массива.
+fruits.push("kiwi");
+
+// Снова вызываем функцию.
+// Теперь в массиве уже есть kiwi.
+showFruits();
 
 
+/*
+===========================================================
+4. ФУНКЦИИ SUM И MULTIPLY
+===========================================================
+
+Тема:
+- функция
+- параметры
+- return
+- использование результата функции
+*/
+
+// Создаём функцию sum.
+// a и b — параметры.
+function sum(a, b) {
+
+    // Возвращаем сумму a и b.
+    return a + b;
+}
 
 
+// Создаём функцию multiply.
+function multiply(a, b) {
 
-/* 
-🟢 Уже прошёл
-1. Основы JavaScript
+    // Возвращаем произведение a и b.
+    return a * b;
+}
+
+
+// Сначала вызывается sum(2, 3).
+// Затем вызывается multiply(4, 5).
+// Результаты перемножаются между собой.
+let mathResult = sum(2, 3) * multiply(4, 5);
+
+// Выводим итоговый результат.
+console.log(mathResult);
+
+
+/*
+===========================================================
+5. ОБЪЕКТЫ
+===========================================================
+
+Тема:
+- объект
+- свойства
+- изменение свойства
+- добавление свойства
+*/
+
+// Создаём объект car.
+let car = {
+
+    // Свойство brand.
+    brand: "BMW",
+
+    // Свойство model.
+    model: "M5",
+
+    // Свойство year.
+    year: 2024
+};
+
+
+// Изменяем существующее свойство model.
+car.model = "M3";
+
+// Добавляем новое свойство price.
+car.price = 50000;
+
+// Выводим весь объект.
+console.log(car);
+
+
+/*
+===========================================================
+6. ИЗМЕНЕНИЕ И ДОБАВЛЕНИЕ СВОЙСТВ
+===========================================================
+*/
+
+// Создаём объект пользователя.
+let user = {
+
+    // Имя пользователя.
+    name: "Danil",
+
+    // Возраст пользователя.
+    age: 25,
+
+    // Город пользователя.
+    city: "Dallas"
+};
+
+
+// Получаем свойство name через точку.
+console.log(user.name);
+
+// Изменяем возраст.
+user.age = 26;
+
+// Добавляем новое свойство.
+user.devVops = "developer";
+
+// Выводим весь объект.
+console.log(user);
+
+
+/*
+===========================================================
+7. МАССИВ ОБЪЕКТОВ
+===========================================================
+
+Тема:
+- массив объектов
+- обращение к объекту по индексу
+- обращение к свойству объекта
+*/
+
+// Создаём массив, внутри которого находятся объекты.
+let uzers = [
+
+    // Первый пользователь имеет индекс 0.
+    { name: "Danil", age: 26 },
+
+    // Второй пользователь имеет индекс 1.
+    { name: "Alex", age: 30 },
+
+    // Третий пользователь имеет индекс 2.
+    { name: "Bob", age: 22 }
+];
+
+
+// users[0] — первый объект.
+// .name — свойство name этого объекта.
+console.log(uzers[0].name);
+
+
+/*
+===========================================================
+8. FOR + МАССИВ ОБЪЕКТОВ
+===========================================================
+*/
+
+// Проходим по всем объектам массива.
+for (let i = 0; i < users.length; i++) {
+
+    // users[i] — текущий объект.
+    // .name — его имя.
+    console.log(users[i].name);
+}
+
+
+/*
+===========================================================
+9. FOR + IF + ОБЪЕКТЫ
+===========================================================
+
+Задача:
+вывести имена пользователей,
+которым 25 лет или больше.
+*/
+
+// Снова перебираем весь массив.
+for (let i = 0; i < users.length; i++) {
+
+    // Проверяем возраст текущего пользователя.
+    if (users[i].age >= 25) {
+
+        // Если возраст 25 или больше,
+        // выводим имя.
+        console.log(users[i].name);
+    }
+}
+
+
+/*
+===========================================================
+10. ОБЪЕКТ PHONE
+===========================================================
+*/
+
+// Создаём объект телефона.
+let phone = {
+
+    // Производитель.
+    brand: "Apple",
+
+    // Модель.
+    model: "iPhone 15",
+
+    // Цена.
+    price: 999
+};
+
+
+// Изменяем модель.
+phone.model = "Iphone 16";
+
+// Изменяем цену.
+phone.price = 1999;
+
+// Выводим сразу два свойства.
+console.log(phone.model, phone.price);
+
+
+/*
+===========================================================
+11. ДОБАВЛЕНИЕ СВОЙСТВ В ОБЪЕКТ
+===========================================================
+*/
+
+// Добавляем цвет телефона.
+phone.color = "black";
+
+// Добавляем объём памяти.
+phone.storage = "256gb";
+
+// Выводим весь объект.
+console.log(phone);
+
+
+/*
+===========================================================
+12. DELETE
+===========================================================
+
+delete удаляет свойство объекта.
+*/
+
+// Создаём пользователя.
+let userDelete = {
+
+    name: "Danil",
+    age: 26,
+    city: "Tampa",
+    job: "developer"
+};
+
+
+// Удаляем свойство city.
+delete userDelete.city;
+
+// Выводим объект без city.
+console.log(userDelete);
+
+
+/*
+===========================================================
+13. ДОСТУП К СВОЙСТВУ ЧЕРЕЗ ПЕРЕМЕННУЮ
+===========================================================
+
+Тема:
+object[property]
+
+Если имя свойства хранится в переменной,
+используем квадратные скобки.
+*/
+
+// Создаём объект.
+let userProperty = {
+
+    name: "Danil",
+    age: 26,
+    city: "Tampa"
+};
+
+
+// В переменной хранится строка "age".
+let property = "age";
+
+// userProperty[property]
+// означает:
+// userProperty["age"]
+console.log(userProperty[property]);
+
+
+/*
+===========================================================
+14. ПЕРЕДАЧА ОБЪЕКТА В ФУНКЦИЮ
+===========================================================
+*/
+
+// Создаём объект пользователя.
+let userFunction = {
+
+    name: "Danil",
+    age: 26
+};
+
+
+// Функция получает объект userFunction
+// через параметр user.
+function showUser(user) {
+
+    // Выводим возраст пользователя.
+    console.log(user.age);
+
+    // Выводим имя пользователя.
+    console.log(user.name);
+}
+
+
+// Передаём объект в функцию.
+showUser(userFunction);
+
+
+/*
+===========================================================
+15. ИЗМЕНЕНИЕ ОБЪЕКТА ЧЕРЕЗ ФУНКЦИЮ
+===========================================================
+*/
+
+// Создаём пользователя.
+let userChange = {
+
+    name: "Danil",
+    age: 26
+};
+
+
+// Функция увеличивает возраст объекта на 1.
+function increaseAge(user) {
+
+    // ++ увеличивает значение на единицу.
+    user.age++;
+}
+
+
+// Функция добавляет пользователю профессию.
+function addJob(user) {
+
+    // Создаём новое свойство job.
+    user.job = "developer";
+}
+
+
+// Передаём объект в первую функцию.
+increaseAge(userChange);
+
+// Передаём объект во вторую функцию.
+addJob(userChange);
+
+// Выводим изменённый объект.
+console.log(userChange);
+
+
+/*
+===========================================================
+16. МЕТОД ОБЪЕКТА
+===========================================================
+
+Функция, которая находится внутри объекта,
+называется методом.
+*/
+
+// Создаём объект.
+let userMethod = {
+
+    name: "Danil",
+    age: 26,
+
+    // sayHello — метод объекта.
+    sayHello: function() {
+
+        // Метод выводит приветствие.
+        console.log("Привет!");
+    }
+};
+
+
+// Вызываем метод объекта.
+userMethod.sayHello();
+
+
+/*
+===========================================================
+17. THIS
+===========================================================
+
+this внутри метода объекта
+ссылается на объект, которому принадлежит метод.
+*/
+
+// Создаём объект автомобиля.
+let carThis = {
+
+    brand: "BMW",
+    model: "M5",
+
+    // Метод объекта.
+    showCar: function() {
+
+        // this.brand означает carThis.brand.
+        // this.model означает carThis.model.
+        console.log(`${this.brand} ${this.model}`);
+    }
+};
+
+
+// Вызываем метод.
+carThis.showCar();
+
+
+/*
+===========================================================
+18. THIS + ИЗМЕНЕНИЕ СВОЙСТВА
+===========================================================
+*/
+
+// Создаём автомобиль.
+let carChange = {
+
+    brand: "BMW",
+    model: "M5",
+
+    // Метод изменения модели.
+    changeModel: function() {
+
+        // this.model означает модель этого объекта.
+        // Изменяем её на M3.
+        this.model = "M3";
+    }
+};
+
+
+// Вызываем метод.
+carChange.changeModel();
+
+// Проверяем изменённую модель.
+console.log(carChange.model);
+
+
+/*
+===========================================================
+19. THIS + УВЕЛИЧЕНИЕ ВОЗРАСТА
+===========================================================
+*/
+
+// Создаём пользователя.
+let userBirthday = {
+
+    name: "Danil",
+    age: 26,
+
+    // Метод birthday.
+    birthday: function() {
+
+        // this.age означает возраст этого объекта.
+        // Увеличиваем его на 1.
+        this.age++;
+    }
+};
+
+
+// Вызываем метод.
+// Возраст станет 27.
+userBirthday.birthday();
+
+// Выводим объект.
+console.log(userBirthday);
+
+
+/*
+===========================================================
+20. THIS + PHONE
+===========================================================
+*/
+
+// Создаём телефон.
+let phoneInfo = {
+
+    brand: "Apple",
+    model: "iPhone 16",
+    price: 1999,
+
+    // Метод вывода информации.
+    showInfo: function() {
+
+        // this.brand — бренд этого телефона.
+        // this.model — модель этого телефона.
+        // this.price — цена этого телефона.
+        console.log(`${this.brand} ${this.model} - $${this.price}`);
+    }
+};
+
+
+// Вызываем метод.
+phoneInfo.showInfo();
+
+
+/*
+===========================================================
+21. FOREACH()
+===========================================================
+
+forEach() перебирает каждый элемент массива.
+
+В отличие от обычного for,
+нам не нужно вручную создавать i.
+*/
+
+// Создаём массив фруктов.
+let fruitsForEach = ["apple", "banana", "orange", "kiwi"];
+
+// forEach запускает функцию для каждого элемента.
+fruitsForEach.forEach(function(fruit) {
+
+    // fruit — текущий элемент массива.
+    console.log(fruit);
+});
+
+
+/*
+===========================================================
+22. FOREACH() + ОБЪЕКТЫ
+===========================================================
+*/
+
+// Создаём массив пользователей.
+let usersForEach = [
+
+    { name: "Danil", age: 26 },
+    { name: "Alex", age: 30 },
+    { name: "Bob", age: 22 }
+];
+
+
+// forEach перебирает каждый объект.
+usersForEach.forEach(function(user) {
+
+    // user.name получает имя текущего пользователя.
+    console.log(user.name);
+});
+
+
+/*
+===========================================================
+23. MAP()
+===========================================================
+
+map() создаёт НОВЫЙ массив.
+
+Каждый элемент преобразуется
+согласно функции внутри map().
+*/
+
+// Создаём массив чисел.
+let numbers = [1, 2, 3, 4, 5];
+
+// Создаём новый массив.
+let doubledNumbers = numbers.map(function(arrayNum) {
+
+    // Умножаем каждый элемент на 2.
+    return arrayNum * 2;
+});
+
+
+// Выводим новый массив.
+console.log(doubledNumbers);
+
+
+/*
+===========================================================
+24. MAP() + ОБЪЕКТЫ
+===========================================================
+*/
+
+// Создаём массив пользователей.
+let usersMap = [
+
+    { name: "Danil", age: 26 },
+    { name: "Alex", age: 30 },
+    { name: "Bob", age: 22 }
+];
+
+
+// map создаёт новый массив.
+let names = usersMap.map(function(user) {
+
+    // Из каждого объекта берём только name.
+    return user.name;
+});
+
+
+// Получаем:
+// ["Danil", "Alex", "Bob"]
+console.log(names);
+
+
+/*
+===========================================================
+25. FILTER()
+===========================================================
+
+filter() выбирает элементы,
+которые соответствуют условию.
+
+Важно:
+внутри filter() обычно возвращается
+true или false.
+*/
+
+// Создаём массив пользователей.
+let usersFilter = [
+
+    { name: "Danil", age: 26 },
+    { name: "Alex", age: 30 },
+    { name: "Bob", age: 22 }
+];
+
+
+// Создаём новый массив взрослых пользователей.
+let adults = usersFilter.filter(function(user) {
+
+    // Если возраст >= 25 → true → пользователь останется.
+    // Если возраст < 25 → false → пользователь будет удалён.
+    return user.age >= 25;
+});
+
+
+// Выводим результат.
+console.log(adults);
+
+
+/*
+===========================================================
+26. FILTER() + НЕСКОЛЬКО УСЛОВИЙ
+===========================================================
+*/
+
+// Создаём массив пользователей.
+let usersAccount = [
+
+    { name: "Danil", age: 26, hasAccount: true },
+    { name: "Alex", age: 30, hasAccount: false },
+    { name: "Bob", age: 22, hasAccount: true },
+    { name: "Mike", age: 28, hasAccount: true }
+];
+
+
+// Фильтруем пользователей.
+let allowedUsers = usersAccount.filter(function(user) {
+
+    // Пользователь должен быть 25+ И иметь аккаунт.
+    return user.age >= 25 && user.hasAccount === true;
+});
+
+
+// Выводим подходящих пользователей.
+console.log(allowedUsers);
+
+
+/*
+===========================================================
+27. FILTER() + 3 УСЛОВИЯ
+===========================================================
+*/
+
+// Создаём массив пользователей.
+let usersCity = [
+
+    { name: "Danil", age: 26, hasAccount: true, city: "Tampa" },
+    { name: "Alex", age: 30, hasAccount: false, city: "Miami" },
+    { name: "Bob", age: 22, hasAccount: true, city: "Tampa" },
+    { name: "Mike", age: 28, hasAccount: true, city: "Miami" },
+    { name: "John", age: 35, hasAccount: true, city: "Tampa" }
+];
+
+
+// Оставляем пользователей,
+// которые подходят сразу под три условия.
+let allowedCityUsers = usersCity.filter(function(user) {
+
+    // Возраст 25+
+    // И аккаунт существует
+    // И город Tampa.
+    return user.age >= 25 &&
+           user.hasAccount === true &&
+           user.city === "Tampa";
+});
+
+
+// Выводим результат.
+console.log(allowedCityUsers);
+
+
+/*
+===========================================================
+28. FILTER() + MAP()
+===========================================================
+
+Очень важная комбинация:
+
+filter() → сначала выбираем нужных пользователей.
+map()    → потом берём из них только нужное свойство.
+*/
+
+// Создаём массив пользователей.
+let usersFilterMap = [
+
+    { name: "Danil", age: 26, hasAccount: true },
+    { name: "Alex", age: 30, hasAccount: false },
+    { name: "Bob", age: 22, hasAccount: true },
+    { name: "Mike", age: 28, hasAccount: true }
+];
+
+
+// Начинаем с массива usersFilterMap.
+let namesFilterMap = usersFilterMap
+
+    // Оставляем только пользователей 25+
+    // с аккаунтом.
+    .filter(function(user) {
+
+        return user.age >= 25 &&
+               user.hasAccount === true;
+    })
+
+    // Теперь берём только имя каждого
+    // оставшегося пользователя.
+    .map(function(user) {
+
+        return user.name;
+    });
+
+
+// Получим:
+// ["Danil", "Mike"]
+console.log(namesFilterMap);
+
+
+/*
+===========================================================
+29. FIND()
+===========================================================
+
+find() ищет ПЕРВЫЙ элемент,
+который соответствует условию.
+
+Разница:
+
+filter() → может вернуть несколько элементов.
+find()   → возвращает только первый подходящий элемент.
+*/
+
+// Создаём массив пользователей.
+let usersFind = [
+
+    { name: "Danil", age: 26 },
+    { name: "Alex", age: 30 },
+    { name: "Bob", age: 22 },
+    { name: "Mike", age: 28 }
+];
+
+
+// Ищем первого пользователя,
+// которому ровно 28 лет.
+let foundUser = usersFind.find(function(user) {
+
+    // Проверяем возраст.
+    return user.age === 28;
+});
+
+
+// Выводим найденный объект.
+console.log(foundUser);
+
+
+/*
+===========================================================
+30. FILTER() + MAP() — БОЛЕЕ СЛОЖНЫЙ ПРИМЕР
+===========================================================
+*/
+
+// Создаём массив товаров.
+let products = [
+
+    { name: "iPhone", price: 1200, inStock: true },
+    { name: "Samsung", price: 900, inStock: true },
+    { name: "Pixel", price: 700, inStock: false },
+    { name: "Xiaomi", price: 500, inStock: true },
+    { name: "OnePlus", price: 800, inStock: true }
+];
+
+
+// Начинаем с массива products.
+let productNames = products
+
+    // Оставляем товары,
+    // цена которых 800 или больше
+    // И которые есть в наличии.
+    .filter(function(prod) {
+
+        return prod.price >= 800 &&
+               prod.inStock === true;
+    })
+
+    // После фильтрации берём только названия.
+    .map(function(prod) {
+
+        return prod.name;
+    });
+
+
+// Результат:
+// ["iPhone", "Samsung", "OnePlus"]
+console.log(productNames);
+
+
+/*
+===========================================================
+31. ARROW FUNCTION
+===========================================================
+
+Стрелочная функция — короткая запись функции.
+
+Было:
+
+function(num) {
+    return num / 2;
+}
+
+Можно написать:
+
+num => num / 2
+*/
+
+// Создаём массив чисел.
+let numbersArrow = [2, 4, 6, 8, 10];
+
+// map получает каждый num
+// и делит его на 2.
+let newArrayArrow = numbersArrow.map(num => num / 2);
+
+// Выводим:
+// [1, 2, 3, 4, 5]
+console.log(newArrayArrow);
+
+
+/*
+===========================================================
+32. SOME() — СЛЕДУЮЩАЯ ТЕМА
+===========================================================
+
+some() проверяет:
+
+"Есть ли ХОТЯ БЫ ОДИН элемент,
+который подходит под условие?"
+
+Результат всегда:
+true или false.
+*/
+
+// Создаём массив пользователей.
+let usersSome = [
+
+    { name: "Danil", age: 26 },
+    { name: "Alex", age: 30 },
+    { name: "Bob", age: 22 },
+    { name: "Mike", age: 28 }
+];
+
+
+// Проверяем,
+// есть ли пользователь старше 30 лет.
+let resultSome = usersSome.some(function(user) {
+
+    // Возвращаем true,
+    // если возраст больше 30.
+    return user.age > 30;
+});
+
+
+// В этом массиве такого пользователя нет,
+// поэтому результат будет false.
+console.log(resultSome);
+
+
+/*
+===========================================================
+33. EVERY() — ПОСЛЕ SOME()
+===========================================================
+
+every() проверяет:
+
+"ВСЕ ли элементы подходят под условие?"
+
+Результат:
+true или false.
+*/
+
+
+// Например:
+// проверим, все ли пользователи старше 20 лет.
+
+let resultEvery = usersSome.every(function(user) {
+
+    // Проверяем возраст каждого пользователя.
+    return user.age > 20;
+});
+
+
+// Все пользователи старше 20,
+// поэтому результат будет true.
+console.log(resultEvery);
+
+
+/*
+===========================================================
+КРАТКАЯ ШПАРГАЛКА
+===========================================================
+
+forEach()
+→ просто перебирает элементы.
+
+map()
+→ создаёт новый массив и преобразует элементы.
+
+filter()
+→ создаёт новый массив только из подходящих элементов.
+
+find()
+→ находит ПЕРВЫЙ подходящий элемент.
+
+some()
+→ есть ХОТЯ БЫ ОДИН подходящий?
+→ true / false
+
+every()
+→ ВСЕ подходят?
+→ true / false
+
+this
+→ внутри метода объекта означает "этот объект".
+
+object.property
+→ обычный доступ к свойству.
+
+object[property]
+→ доступ к свойству через переменную.
+
+&&
+→ И.
+Оба условия должны быть true.
+*/
+
+
+/*
+===========================================================
+ТВОЙ ПРОГРЕСС
+===========================================================
+
+🟢 ОСНОВЫ
 ✅ let
 ✅ переменные
 ✅ строки
@@ -444,282 +1097,84 @@ multiply(a, b)
 ✅ boolean
 ✅ console.log()
 ✅ операторы ===, >, <, >=
-✅ логический оператор &&
-2. Условия
+✅ &&
+
+🟢 УСЛОВИЯ
 ✅ if
 ✅ else if
 ✅ else
 ✅ несколько условий
-✅ проверки true / false
 
-Ты делал, например:
-
-if (age >= 18 && hasAccount === true) {
-    // ...
-}
-3. Массивы
-✅ создание массива
+🟢 МАССИВЫ
+✅ создание
 ✅ индексы
-✅ почему отсчёт начинается с 0
-✅ fruits[0]
-✅ изменение элемента
-✅ .length
+✅ length
 ✅ push()
 ✅ shift()
-✅ перебор массива через for
-4. Циклы
-✅ for
-✅ i
-✅ i < array.length
-✅ array[i]
-✅ перебор массивов
-✅ перебор массивов объектов
-5. Функции
-✅ создание функций
+✅ перебор через for
+
+🟢 ФУНКЦИИ
+✅ создание
 ✅ параметры
 ✅ аргументы
-✅ вызов функций
+✅ вызов
 ✅ return
-✅ функции с несколькими параметрами
-✅ функции, которые что-то возвращают
-✅ функции, которые просто выполняют действие
-✅ разница между return и console.log()
+✅ несколько параметров
+✅ разница return / console.log()
 
-Например:
-
-function sum(a, b) {
-    return a + b;
-}
-🟢 Объекты — ты прошёл большой блок
-6. Объекты
-✅ создание объекта
+🟢 ОБЪЕКТЫ
+✅ создание
 ✅ свойства
-✅ получение свойства через .
-✅ изменение свойства
-✅ добавление свойства
-✅ удаление через delete
+✅ получение через .
+✅ изменение
+✅ добавление
+✅ delete
 ✅ object[property]
 ✅ передача объекта в функцию
 
-Ты уже делал:
-
-user.age = 26;
-user.job = "developer";
-delete user.city;
-7. Массивы объектов
-✅ массив объектов
-✅ перебор объектов
+🟢 МАССИВЫ ОБЪЕКТОВ
+✅ перебор
 ✅ users[i].name
 ✅ users[i].age
-✅ фильтрация объектов по условиям
+✅ условия
 
-Например:
-
-if (users[i].age >= 25) {
-    console.log(users[i].name);
-}
-8. Методы объектов
-✅ функция внутри объекта
-✅ вызов метода
+🟢 МЕТОДЫ ОБЪЕКТОВ
+✅ методы
 ✅ this
-✅ получение свойств через this
-✅ изменение свойств через this
+✅ this.property
+✅ изменение через this
 
-Ты уже делал:
-
-let car = {
-    brand: "BMW",
-    model: "M5",
-
-    changeModel: function() {
-        this.model = "M3";
-    }
-};
-
-Это уже хороший уровень для твоего текущего этапа.
-
-🟢 Методы массивов — тоже начал очень хорошо
-9. forEach()
-✅ обычный массив
-✅ массив объектов
-✅ получение свойств объекта внутри forEach()
-users.forEach(function(user) {
-    console.log(user.name);
-});
-10. map()
-✅ создание нового массива
-✅ преобразование элементов
-✅ map() с объектами
-✅ получение свойства объекта через map()
-
-Ты делал:
-
-let names = users.map(function(user) {
-    return user.name;
-});
-11. filter()
-✅ фильтрация чисел
-✅ фильтрация объектов
-✅ условия внутри filter()
-✅ несколько условий через &&
+🟢 МЕТОДЫ МАССИВОВ
+✅ forEach()
+✅ map()
+✅ filter()
+✅ find()
 ✅ filter() + map()
-✅ цепочка методов
+✅ цепочки методов
 
-Например:
+🟡 СЕЙЧАС
+➡️ some()
+➡️ every()
 
-let names = users
-    .filter(function(user) {
-        return user.age >= 25 && user.hasAccount === true;
-    })
-    .map(function(user) {
-        return user.name;
-    });
-
-🔥 Это уже очень полезный практический JavaScript.
-
-12. find()
-✅ поиск элемента
-✅ поиск объекта по условию
-✅ понимание разницы между find() и filter()
-
-Ты только что правильно сделал:
-
-let user = users.find(function(user) {
-    return user.age === 28;
-});
-🟡 Что сейчас изучаем
-
-Ты сейчас примерно здесь:
-
-forEach() ✅
-map()     ✅
-filter()  ✅
-find()    ✅
-↓
-some()    ← следующий
-every()
-
+🟡 ДАЛЬШЕ
+➡️ arrow functions подробнее
+➡️ остальные полезные методы массивов
+➡️ деструктуризация
+➡️ spread / rest
+➡️ современные конструкции JavaScript
 */
 
 
-/*ЭКЗАМЕН*/
 
 
+/*-----------------------------------------------------------------*/
+// some() проверяет:
 
-/* 🟢 Задание 1 — массив
+// Есть ли хотя бы один элемент, который подходит под условие?
 
-Есть:
-
-let fruits = ["apple", "banana", "orange", "kiwi"];
-
-Напиши код, который:
-
-добавит "mango"
-удалит первый элемент
-выведет итоговый массив
-
-Ожидаемый результат:
-
-["banana", "orange", "kiwi", "mango"] */
-
-/* let fruits = ["apple", "banana", "orange", "kiwi"];
-fruits.push("mango");
-fruits.shift([0]);
-console.log(fruits); */
-
-/* 🟢 Задание 2 — функция
-
-Создай функцию:
-
-checkNumber(number)
-
-Она должна возвращать:
-
-"Положительное" если число больше 0
-"Ноль" если число равно 0
-"Отрицательное" если число меньше 0
-
-Проверь её на трёх разных числах. */
-
-// function checkNumber(number){
-//     if(number > 0){
-//         return "Положительное";
-//     } else if(number === 0){
-//         return "Ноль";
-//     } else { 
-//         return "Отрицательное";
-//     } 
-// }
-//     let result = checkNumber(0);
-//     let result2 = checkNumber(1);
-//     let result3 = checkNumber(-1);
-//     console.log(result);
-//     console.log(result2);
-//     console.log(result3);
-
-
-// 🟢 Задание 3 — функция + условия
-
-// Создай:
-
-// checkUser(name, age, hasAccount)
-
-// Доступ разрешён, если:
-
-// age >= 18
-// И
-// hasAccount === true
-
-// Функция должна вернуть:
-
-// "Danil, доступ разрешен"
-
-// или:
-
-// "Danil, доступ запрещен"
-
-// Проверь функцию минимум на 2 разных пользователях.
-
-// function checkUser(name, age, hasAccount) {
-//     if (age >=18 && hasAccount === true){
-//         return name + " доступ разрешен";
-//     } else {
-//         return name + " доступ запрещен";
-//     }
-// };
-
-// let name = "Dima";
-// let age = 19;
-// let hasAccount = true;
-// checkUser(name, age, hasAccount);
-
-
-// 🟡 Задание 4 — объект
-
-// Создай объект:
-
-// let phone = {
-//     brand: "Apple",
-//     model: "iPhone 16",
-//     price: 1999
-// };
-
-// Затем:
-
-// измени price на 1799
-// добавь color: "black"
-// добавь storage: "256GB"
-// удали brand
-// выведи объект
-
-// let phone = {
-//     brand: "Apple",
-//     model: "iPhone 16",
-//     price: 1999
-// };
-
-// phone.price = 1799;
-// phone.color = "black";
-// phone.storage = "256GB"
-// delete phone.brand;
-// console.log(phone);
+let users = [
+    { name: "Danil", age: 26 },
+    { name: "Alex", age: 30 },
+    { name: "Bob", age: 22 },
+    { name: "Mike", age: 28 }
+];
